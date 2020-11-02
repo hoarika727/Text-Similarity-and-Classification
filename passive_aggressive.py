@@ -13,22 +13,6 @@ df = pd.read_csv('data/train.csv')
 df.head(10)
 
 # %%
-nltk.download('words')
-words = set(nltk.corpus.words.words())
-
-def filter_words(text):
-    '''a function for removing the non English words'''
-    # removing the stop words and lowercasing the selected words
-    text = [word.lower() for word in text.split() if word.lower() not in words]
-    # joining the list of words with space separator
-    return " ".join(text)
-
-# %%
-# not helping to improve the accuracy
-# df['title1_en'] = df['title1_en'].apply(filter_words)
-# df['title2_en'] = df['title2_en'].apply(filter_words)
-
-# %%
 #DataFlair - Split the dataset
 x_train,x_test,y_train,y_test=train_test_split(df['title1_en']+df['title2_en'], df['label'], test_size=0.2, random_state=7)
 
