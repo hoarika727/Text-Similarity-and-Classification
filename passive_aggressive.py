@@ -61,7 +61,6 @@ test["title_comb"] = test["title_comb"].apply(lemmatizing)
 
 # %%
 #DataFlair - Split the dataset
-#x_train,x_test,y_train,y_test=train_test_split(train['title1_en']+train['title2_en'], train['label'], test_size=0.2, random_state=7)
 x_train, y_train = train["title_comb"], train["label"] 
 x_test = test["title_comb"]
 
@@ -77,10 +76,6 @@ pac=PassiveAggressiveClassifier(max_iter=50)
 pac.fit(tfidf_train,y_train)
 #DataFlair - Predict on the test set and calculate accuracy
 y_pred=pac.predict(tfidf_test)
-# %%
-# Accuracy
-score=accuracy_score(y_test,y_pred)
-print(f'Accuracy: {round(score*100,2)}%')
 # %%
 # Submission
 sub['label'] = y_pred
