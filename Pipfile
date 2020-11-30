@@ -12,6 +12,8 @@ numpy = "*"
 nltk = "*"
 matplotlib = "*"
 sklearn = "*"
+scikit-plot = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.7"
