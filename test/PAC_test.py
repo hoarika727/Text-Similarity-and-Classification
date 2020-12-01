@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn import svm
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -73,6 +73,8 @@ y_pred=pac.predict(tfidf_test)
 # Accuracy
 score=accuracy_score(y_test,y_pred)
 print(f'Accuracy: {round(score*100,2)}%')
+f1score = f1_score(y_test,y_pred, average='weighted')
+print(f'F1-score: {round(f1score*100,2)}%')
 
 # %%
 plt.rcParams.update({'font.size': 18})

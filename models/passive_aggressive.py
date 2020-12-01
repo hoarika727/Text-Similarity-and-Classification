@@ -13,11 +13,11 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
 # %%
-train = pd.read_csv('data/train.csv')
+train = pd.read_csv('../data/train.csv')
 train["title_comb"] = train['title1_en']+train['title2_en']
-test = pd.read_csv('data/test.csv')
+test = pd.read_csv('../data/test.csv')
 test["title_comb"] = test['title1_en']+test['title2_en']
-sub = pd.read_csv('data/sample_submission.csv')
+sub = pd.read_csv('../data/sample_submission.csv')
 
 # %%
 # Data preprocessing 

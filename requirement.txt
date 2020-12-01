@@ -1,0 +1,11 @@
+scikit-plot
+sklearn
+numpy
+pandas
+matplotlib
+ntlk
+gensim
+sent2vec
+word2vec
+tqdm
+tensorflow
